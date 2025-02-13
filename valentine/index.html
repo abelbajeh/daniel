@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #660033, #ff99cc);
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: url('images/bg.png') center/cover no-repeat;
+            padding: 20px;
+            margin: 50px 50px 20px 20px;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 10px;
+            width: 80vw;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            border: solid #000;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            margin-top: 30px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 220px;
+            height: 280px;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Love Note Section */
+        .love-note {
+            background: rgba(255, 51, 102, 0.9);
+            padding: 25px;
+            margin: 40px auto;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* Heart Animation */
+        @keyframes floating-hearts {
+            0% {transform: translateY(0);}
+            100% {transform: translateY(-100vh);}
+        }
+
+        .heart {
+            position: fixed;
+            bottom: 0;
+            font-size: 30px;
+            animation: floating-hearts 6s linear infinite;
+            color: rgba(255, 99, 132, 0.8);
+            opacity: 0.7;
+        }
+
+        /* Button Styling */
+        .btn {
+            background: white;
+            color: #ff3366;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 20px;
+        }
+
+        .btn:hover {
+            background: #ff3366;
+            color: white;
+        }
+
+        /* Music Player */
+        .music-container {
+            margin-top: 30px;
+        }
+
+        audio {
+            outline: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 50vw;
+                font-size: 22px;
+                top: 2vh;
+            }
+
+            .gallery img {
+                width: 180px;
+                height: 230px;
+            }
+
+            .love-note {
+                width: 90%;
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            audio {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                margin: 0 10px;
+                width: calc(100% - 20px);
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .gallery img {
+                width: 150px;
+                height: 200px;
+            }
+
+            .love-note {
+                width: 95%;
+                font-size: 16px;
+                padding: 20px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+
+            audio {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>Happy Valentine's Day, My Love ❤</header>
+
+    <!-- Image Gallery Section -->
+    <section class="gallery-container">
+        <h2 style="font-size: 24px;">🌹 My Beautiful Queen 🌹</h2>
+        <div class="gallery">
+            <img src="images/pic1.jpg" alt="Her Image 1">
+            <img src="images/pic2.jpg" alt="Her Image 2">
+            <img src="images/pic3.jpg" alt="Her Image 3">
+        </div>
+    </section>
+
+    <!-- Love Note Section -->
+    <section class="love-note">
+        <p id="love-note-text"></p>
+    </section>
+
+    <!-- Music Player -->
+    <div class="music-container">
+        <h3 style="color: #fff;">🎶 Play Our Love Song 🎶</h3>
+        <audio controls autoplay loop>
+            <source src="music/love-song.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <!-- Heart Animation -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+
+        // Typing Effect
+        const text = "My Love, \nEvery moment with you is magical. You make my days brighter, my heart fuller, and my love deeper. \nI am grateful to have you by my side, and I cherish every second we share. \nYou are my world, my happiness, and my forever. \nHappy Valentine's Day, my queen! ❤";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                document.getElementById("love-note-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Adjust typing speed here
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
+</body>
+</html>
